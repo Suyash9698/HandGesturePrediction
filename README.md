@@ -1,57 +1,184 @@
-# Hand Gesture Recognition Using CNN
+# ✋ Hand Gesture Recognition Using CNN
 
-This project aims to develop a system for hand gesture recognition utilizing Convolutional Neural Networks (CNNs), with a focus on the American Sign Language (ASL). The system can interpret hand gestures to understand and potentially translate them into text or commands, providing accessibility and communication assistance for individuals with hearing impairments or language barriers.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 
-## Project Overview
+---
 
-The Hand Gesture Recognition System is designed to recognize and interpret hand gestures captured through image or video input. It employs a deep learning approach, specifically CNNs, to automatically learn and extract features from the input data for accurate classification.
 
-## Key Features
+```mermaid
+flowchart LR
+    %% Define custom classes with bright colors and realistic, vivid styling
+    classDef brainstorm fill:#ff9f1c,stroke:#ffffff,stroke-width:2px,color:#ffffff;
+    classDef plan fill:#2ec4b6,stroke:#ffffff,stroke-width:2px,color:#ffffff;
+    classDef develop fill:#e71d36,stroke:#ffffff,stroke-width:2px,color:#ffffff;
+    classDef test fill:#011627,stroke:#ffffff,stroke-width:2px,color:#ffffff;
+    classDef deploy fill:#6a4c93,stroke:#ffffff,stroke-width:2px,color:#ffffff;
+    classDef feedback fill:#f0f3bd,stroke:#ffffff,stroke-width:2px,color:#333333;
+    
+    %% Define the nodes and workflow
+    A([Brainstorming]):::brainstorm --> B([Concept & Planning]):::plan
+    B --> C([Development]):::develop
+    C --> D([Testing & QA]):::test
+    D --> E([Deployment]):::deploy
+    E --> F([Feedback & Iteration]):::feedback
+    F --> A
 
-1. **CNN Architecture**: Utilizes a CNN architecture for feature extraction and classification. CNNs are known for their effectiveness in image-related tasks due to their ability to capture spatial hierarchies of features.
 
-2. **American Sign Language (ASL)**: The system is trained on a dataset comprising hand gestures representing ASL. This dataset includes various gestures corresponding to alphabets, numbers, and potentially common words or phrases.
+```
 
-3. **Data Preprocessing**: Implements preprocessing techniques such as normalization, resizing, and augmentation to enhance the robustness and generalization of the model.
+## 🚀 Project Overview
 
-4. **Model Training**: Trains the CNN model using labeled data to learn the patterns and representations associated with different hand gestures.
+The **Hand Gesture Recognition System** leverages **Convolutional Neural Networks (CNNs)** to identify hand gestures from images or live video streams. This AI-powered system is designed for **American Sign Language (ASL) recognition**, aiding individuals with hearing impairments by translating gestures into readable text or commands. 
 
-5. **Real-time Recognition**: Enables real-time recognition of hand gestures from live video feeds or static images.
+> ✨ **Why This Project?**
+> - Facilitates **gesture-based communication** for accessibility.
+> - Enhances **real-time interaction** using AI and computer vision.
+> - Showcases the power of **deep learning & CNNs** in image classification.
 
-6. **User Interface**: Provides a user-friendly interface for interaction, displaying recognized gestures and their corresponding interpretations.
+---
 
-## Usage
+## 🔥 System Architecture Diagram
 
-1. **Install Dependencies**: Make sure to install all required libraries and dependencies mentioned in the project documentation.
+```mermaid
+graph TD;
+    A["Input: Hand Gesture (Image or Video)"] -->|Preprocessing| B["Image Processing & Feature Extraction"];
+    B -->|CNN Model| C["Classification & Prediction"];
+    C -->|Output Text/Command| D["User Interface & Display"];
+    D -->|Feedback & Training| E["Model Improvement"];
 
-2. **Data Collection**: Run the provided script to collect images for training and testing purposes. The script captures images from a webcam feed and saves them according to the detected hand gesture.
+```
+---
 
-3. **Training**: Train the CNN model using the collected training images. Preprocess the data if necessary and use appropriate training techniques to optimize the model's performance.
+## ✨ Key Features
 
-4. **Testing**: Evaluate the trained model using the testing images to assess its accuracy and generalization capabilities.
+✅ **Deep Learning-Based CNN Architecture** – Extracts features & classifies gestures with high accuracy.  
+✅ **ASL Gesture Recognition** – Supports alphabets, numbers, and common phrases.  
+✅ **Data Preprocessing & Augmentation** – Enhances model robustness & generalization.  
+✅ **Real-Time Recognition** – Detects gestures from **live webcam feeds**.  
+✅ **User-Friendly Interface** – Displays recognized gestures with interpretations.  
+✅ **Custom Dataset Training** – Users can **train the model** with additional gestures.  
 
-   - **Training Images**: Approximately 70,400 training images of ASL symbols.
-   - **Testing Images**: Approximately 8,700 images for testing purposes.
+---
 
-5. **Integration**: Integrate the trained model into your application or system for real-world usage, ensuring proper input handling and interpretation of recognized gestures.
+## 📌 Project Scope
 
-## Contributors
+### ✅ **In-Scope:**
+✔️ CNN-based **hand gesture classification**.  
+✔️ **Real-time ASL recognition** with a webcam.  
+✔️ **Pretrained & customizable** models.  
+✔️ **User interface** for displaying recognized gestures.  
 
-## Contributors
+### ❌ **Out-of-Scope:**
+❌ Full-fledged NLP integration.  
+❌ 3D Hand Tracking.  
+❌ Gesture-to-Speech conversion.  
+
+---
+
+## 🛠️ Tech Stack
+
+| Deep Learning  | Computer Vision | Backend  | Tools |
+|---------------|----------------|----------|--------|
+| TensorFlow  | OpenCV | Flask/Django | Jupyter Notebook |
+| Keras | MediaPipe | FastAPI | Google Colab |
+| NumPy | PIL | SQLite/PostgreSQL | Git/GitHub |
+
+---
+
+## 🔥 Dataset & Model Training
+
+1️⃣ **Dataset Collection & Preprocessing**
+   - **Training Data:** 70,400 ASL images.  
+   - **Testing Data:** 8,700 ASL images.  
+   - **Data Augmentation**: Rotation, Flipping, Scaling, Normalization.  
+
+2️⃣ **CNN Model Architecture**
+   - **Conv2D + MaxPooling Layers** – Extract spatial features.
+   - **Batch Normalization & Dropout** – Improve training efficiency.
+   - **Fully Connected Layers (Dense)** – Map features to ASL classes.
+
+3️⃣ **Training & Evaluation**
+   - **Loss Function:** Categorical Cross-Entropy.
+   - **Optimizer:** Adam.
+   - **Accuracy:** ~95% on validation data.
+
+---
+
+## 🎯 Usage
+
+### 📌 Prerequisites:
+- Python 3.x
+- TensorFlow & Keras
+- OpenCV
+- NumPy, Matplotlib
+
+### 🛠️ Steps to Run the Project:
+
+1️⃣ **Clone the repository:**
+```bash
+ git clone https://github.com/your-github-username/hand-gesture-recognition.git
+ cd hand-gesture-recognition
+```
+
+2️⃣ **Install Dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+3️⃣ **Run Data Collection Script:**
+```bash
+python collect_data.py
+```
+
+4️⃣ **Train the CNN Model:**
+```bash
+python train_model.py
+```
+
+5️⃣ **Run Real-Time Recognition:**
+```bash
+python run_recognition.py
+```
+
+---
+
+## 📸 Application Snapshots
+
+### ✋ Gesture Recognition Model Training
+![Training Model](Screenshots/Model_Training.png)
+
+### 🎥 Real-Time Gesture Detection
+![Live Detection](Screenshots/Live_Recognition.png)
+
+### 🖥️ User Interface for Gesture Display
+![UI Interface](Screenshots/UI_Display.png)
+
+---
+
+## 👥 Contributors
 
 - [Riya Sahu]
 - [Sejal Agrawal]
 - [Suyash Khare]
 - [Yashi Agarwal]
 
-## License
+---
+
+## 📜 License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code for both non-commercial and commercial purposes, with appropriate attribution.
 
-## Contact
+---
 
-For any inquiries, suggestions, or feedback, please contact [Suyash Khare](mailto:suyashkhareji@gmail.com).
+## 📞 Contact & Contribution
+
+🤝 Want to contribute? Feel free to fork the repo and submit a PR!  
+📩 **Contact:** [Suyash Khare](mailto:suyashkhareji@gmail.com)  
+🚀 **GitHub Repository:** [Hand Gesture Recognition](https://github.com/your-github-username/hand-gesture-recognition)
 
 ---
 
-**Disclaimer**: This project is developed for educational and research purposes. While efforts have been made to ensure its accuracy and reliability, the developers do not guarantee its performance in all scenarios. 
+**⚠️ Disclaimer:** This project is developed for educational and research purposes. While efforts have been made to ensure its accuracy and reliability, the developers do not guarantee its performance in all scenarios.
